@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+export CARGO_HOME = $(CURDIR)/debian/cargo-home
+%:
+	dh $@ --with=vci
+override_dh_auto_configure:
+	install -Dpm0644 packaging/cargo-config.toml $(CARGO_HOME)/config.toml
+override_dh_auto_build:
+	cargo build --release --offline
+override_dh_auto_test:
+	cargo test --offline
+override_dh_auto_install:
+	install -Dpm0755 target/release/vci-openfactory-platform debian/vci-openfactory-platform/usr/libexec/vci/vci-openfactory-platform
+	install -Dpm0644 packaging/tech.openfactory.platform.service.d/timeout.conf debian/vci-openfactory-platform/usr/lib/systemd/system/tech.openfactory.platform.service.d/timeout.conf
+override_dh_auto_clean:
+	rm -rf target Cargo.lock $(CARGO_HOME)

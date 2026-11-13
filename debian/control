@@ -1,0 +1,15 @@
+Source: vci-openfactory-platform
+Section: admin
+Priority: optional
+Maintainer: OpenFactory <support@openfactory.tech>
+Build-Depends: debhelper-compat (= 13), dh-vci, cargo, rustc (>= 1.85), librust-vci-dev (>= 0.2), librust-serde-json-dev, librust-tokio-dev
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/elster-drones/vci-openfactory-platform
+
+Package: vci-openfactory-platform
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, openfactory-storage (>= 1.2.0)
+Description: VCI forwarding component for OpenFactory host configuration
+ Forwards Check, Set, config Get and state Get to openfactory-storage with a
+ bounded deadline and no in-memory settings cache.

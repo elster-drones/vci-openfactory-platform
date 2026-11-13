@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: MPL-2.0
+# Builds from the crates the distro packages install, with no network. The gate and
+# the package builds put this in $CARGO_HOME/config.toml.
+[source.crates-io]
+replace-with = "distro"
+
+[source.distro]
+directory = "/usr/share/cargo/registry"

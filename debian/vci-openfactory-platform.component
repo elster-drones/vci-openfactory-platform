@@ -1,0 +1,9 @@
+[Vyatta Component]
+Name=tech.openfactory.platform
+ExecName=/usr/libexec/vci/vci-openfactory-platform
+Description=OpenFactory host configuration
+StartOnBoot=true
+
+[Model tech.openfactory.platform.v1]
+Modules=openfactory-platform-v1
+ModelSets=vyatta-v1

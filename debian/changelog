@@ -1,0 +1,5 @@
+vci-openfactory-platform (0.1.0) unstable; urgency=medium
+
+  * Forward the existing host configuration CLI through VCI with bounded calls.
+
+ -- OpenFactory <support@openfactory.tech>  Fri, 13 Nov 2026 18:35:00 +0000
