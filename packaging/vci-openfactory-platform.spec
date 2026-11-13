@@ -2,9 +2,9 @@ Name:           vci-openfactory-platform
 Version:        0.1.0
 Release:        1
 Summary:        VCI forwarding component for OpenFactory host configuration
-License:        MIT AND MPL-2.0 AND Apache-2.0 AND BSD-3-Clause
+License:        MIT AND MPL-2.0 AND Unicode-3.0
 URL:            https://github.com/elster-drones/vci-openfactory-platform
-Source0:        vci-openfactory-platform_0.1.0.tar.gz
+Source0:        vci-openfactory-platform_0.1.0.tar.xz
 BuildRequires:  cargo
 BuildRequires:  rust
 BuildRequires:  rust-vci-devel >= 0.2
