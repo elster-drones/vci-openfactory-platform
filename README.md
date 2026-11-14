@@ -4,7 +4,9 @@
 forwarding Check, Set, config Get and state Get to `/usr/bin/openfactory-storage
 vci`. The CLI owns the schema and rendering; this component caches no settings.
 Every call has a 30-second deadline. A timeout or output error kills and reaps the
-CLI. Each output stream is limited to 1 MiB. systemd allows 45 seconds to stop.
+CLI. Each output stream is limited to 1 MiB. systemd allows 45 seconds to stop. The shared Debian/Fedora drop-in sets
+`Restart=no`: after a bus loss or process failure an operator explicitly starts
+the component again.
 
 A failed Set returns a plain D-Bus Failed error so it appears in configd commit
 output. configd can still advance running config; confirm application with
